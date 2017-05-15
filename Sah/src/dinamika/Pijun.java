@@ -37,12 +37,12 @@ public class Pijun extends Figura {
 				niz[counter++] = new Polozaj(p.getX() - 2, p.getY());
 		}
 		
-		if(this.boja == 0 && p.getX() == 4 && poslednji.getFigura() instanceof Pijun && poslednji.prethodniPolozaj.getX() == 6 && poslednji.getFigura().getP().getX() == 4){
+		if(poslednji != null && this.boja == 0 && p.getX() == 4 && poslednji.getFigura() instanceof Pijun && poslednji.prethodniPolozaj.getX() == 6 && poslednji.getFigura().getP().getX() == 4){
 			if(poslednji.getFigura().getP().getY() + 1 == p.getY()) niz[counter++] = new Polozaj(5, poslednji.getFigura().getP().getY());
 			else if(poslednji.getFigura().getP().getY() - 1 == p.getY()) niz[counter++] = new Polozaj(5, poslednji.getFigura().getP().getY());
 		}
 		
-		if(this.boja == 1 && p.getX() == 3 && poslednji.getFigura() instanceof Pijun && poslednji.prethodniPolozaj.getX() == 1 && poslednji.getFigura().getP().getX() == 3){
+		if(poslednji != null && this.boja == 1 && p.getX() == 3 && poslednji.getFigura() instanceof Pijun && poslednji.prethodniPolozaj.getX() == 1 && poslednji.getFigura().getP().getX() == 3){
 			if(poslednji.getFigura().getP().getY() + 1 == p.getY()) niz[counter++] = new Polozaj(2, poslednji.getFigura().getP().getY());
 			else if(poslednji.getFigura().getP().getY() - 1 == p.getY()) niz[counter++] = new Polozaj(2, poslednji.getFigura().getP().getY());
 		}

@@ -101,7 +101,6 @@ public class Partija {
 			potez = ++potez % 2;
 			ispis();
 		}
-		
 	}
 	
 	public static void ispisi(Polozaj[] mogucnosti){
