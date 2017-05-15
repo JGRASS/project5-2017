@@ -18,7 +18,7 @@ public class Lovac extends Figura {
 		super();
 	}
 
-	public Polozaj[] mogucnosti(Figura[][] tabla) {
+	public Polozaj[] mogucnosti(Figura[][] tabla, PoslednjiPotez poslednji) {
 		Polozaj[] niz = new Polozaj[13];
 		boolean[] kraj = new boolean[4];
 		int counter = 0;

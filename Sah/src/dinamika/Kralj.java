@@ -13,7 +13,7 @@ public class Kralj extends Figura {
 		else p.setX(7);
 	}
 	
-	public Polozaj[] mogucnosti(Figura[][] tabla) {
+	public Polozaj[] mogucnosti(Figura[][] tabla, PoslednjiPotez poslednji) {
 		Polozaj[] pocetniNiz = sveKraljveMogucnosti(p.getX(), p.getY(), tabla);
 		Polozaj[] konacniNiz = new Polozaj[8];
 		LinkedList<Polozaj> nemoguca = nemoguca(tabla);

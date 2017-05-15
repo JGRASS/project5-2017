@@ -13,7 +13,7 @@ public abstract class Figura {
 		super();
 	}
 
-	public abstract Polozaj[] mogucnosti(Figura[][] tabla);
+	public abstract Polozaj[] mogucnosti(Figura[][] tabla, PoslednjiPotez poslednji);
 	public abstract Polozaj[] zasticena(Figura[][] tabla);
 	
 	public int getBoja() {

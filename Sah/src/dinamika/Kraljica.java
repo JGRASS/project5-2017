@@ -9,7 +9,7 @@ public class Kraljica extends Figura {
 		else p.setX(7);
 	}
 	
-	public Polozaj[] mogucnosti(Figura[][] tabla) {
+	public Polozaj[] mogucnosti(Figura[][] tabla, PoslednjiPotez poslednji) {
 		Polozaj[] niz = new Polozaj[28];
 		int counter = 0;
 

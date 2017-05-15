@@ -11,7 +11,7 @@ public class Konj extends Figura {
 	}
 	
 	
-	public Polozaj[] mogucnosti(Figura[][] tabla) {
+	public Polozaj[] mogucnosti(Figura[][] tabla, PoslednjiPotez poslednji) {
 		Polozaj[] niz = new Polozaj[8];
 		int counter = 0;
 		

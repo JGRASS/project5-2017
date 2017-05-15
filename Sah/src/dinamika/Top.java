@@ -16,7 +16,7 @@ public class Top extends Figura {
 			p.setY(7);
 	}
 
-	public Polozaj[] mogucnosti(Figura[][] tabla) {
+	public Polozaj[] mogucnosti(Figura[][] tabla, PoslednjiPotez poslednji) {
 		Polozaj[] niz = new Polozaj[14];
 		boolean[] kraj = new boolean[4];
 		int counter = 0;

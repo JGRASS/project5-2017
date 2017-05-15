@@ -6,14 +6,16 @@ import dinamika.*;
 
 public class Partija {
 	Figura[][] tabla;
+	PoslednjiPotez[] poslednjiPotezi;
 	int potez;
 	Scanner citaj = new Scanner(System.in);
 	
 	public Partija(){
 		tabla = new Figura[8][8];
+		poslednjiPotezi = new PoslednjiPotez[2];
 		for(int boja = 0; boja < 2; boja++){
 			int poz = boja * 7;
-			
+			poslednjiPotezi[boja] = new PoslednjiPotez();
 			for(int j = 0; j < 8; j++)
 				tabla[Math.abs(poz - 1)][j] = new Pijun(boja, j);
 			
@@ -71,7 +73,7 @@ public class Partija {
 				System.out.println("Greska, pokusajte ponovo");
 				continue;
 			}
-			Polozaj[] mogucnosti = tabla[x][y].mogucnosti(tabla);
+			Polozaj[] mogucnosti = tabla[x][y].mogucnosti(tabla, poslednjiPotezi[(potez + 1) % 2]);
 			if(mogucnosti[0] == null){
 				System.out.println("Nema mogucnosti za pomeranje figure, pokusajte ponovo");
 				continue;
@@ -87,9 +89,14 @@ public class Partija {
 					continue;
 				}
 				uspesan = true;
+				if(tabla[x][y] instanceof Pijun && tabla[x1][y1] == null && y != y1){
+					tabla[x][y1] = null;
+				}
 				tabla[x1][y1] = tabla[x][y];
 				tabla[x][y] = null;
 				tabla[x1][y1].pomeri(x1, y1, tabla);
+				poslednjiPotezi[potez].setPrethodniPolozaj(new Polozaj(x, y));
+				poslednjiPotezi[potez].setFigura(tabla[x1][y1]);
 			}
 			potez = ++potez % 2;
 			ispis();
