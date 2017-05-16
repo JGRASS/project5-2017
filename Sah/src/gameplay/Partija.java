@@ -64,6 +64,20 @@ public class Partija {
 		int x, y;
 		Scanner s = new Scanner(System.in);
 		while(true){
+			if(Sah.proveri(tabla, potez)){
+				if(Pat.proveri(tabla, potez, poslednjiPotezi[(potez + 1) % 2])){
+					System.out.println("Sah mat");
+					break;
+				}
+				else
+					System.out.println("Sah");
+			}
+			else{
+				if(Pat.proveri(tabla, potez, poslednjiPotezi[(potez + 1) % 2])){
+					System.out.println("Pat");
+					break;
+				}
+			}
 			if(potez == 0) System.out.println("Beli na potezu");
 			else System.out.println("Crni na potezu");
 			System.out.println("Unesite koordinate");
@@ -101,6 +115,7 @@ public class Partija {
 			potez = ++potez % 2;
 			ispis();
 		}
+		System.out.println("Kraj igre");
 	}
 	
 	public static void ispisi(Polozaj[] mogucnosti){
